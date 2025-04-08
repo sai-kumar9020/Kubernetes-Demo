@@ -2,4 +2,5 @@
    print("Hello Everyone!")
 
  def farewell():
-    print("Goodbye!)
+    print("Goodbyeee!)
+    print("hey")
