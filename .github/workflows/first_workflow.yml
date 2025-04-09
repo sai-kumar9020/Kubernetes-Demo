@@ -1,9 +1,9 @@
 name : my first workflow
 
-on : [push , pull_request_review, fork] 
+on : [push , pull_request_review, fork, pull_request] 
 
 jobs:
-  linux-os:
+  build:
    runs-on: ubuntu-latest
    steps: 
      - name: Checkout
