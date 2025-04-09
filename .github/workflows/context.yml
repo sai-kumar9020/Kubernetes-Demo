@@ -1,0 +1,43 @@
+name: context examples
+
+on:
+  workflow_dispatch:
+
+env:
+  FirstName: 'Sai'
+
+jobs:
+  builds:
+    runs-on: ubuntu-latest
+    env:
+      MiddleName: 'Kumar'
+    steps:
+      - name: "Display Info"
+        run: |
+          
+          echo "It displays the name of the action currently running, or the id of a step : ${{ github.action }}"
+          echo "It displays the repo id : repo id is ${{ github.repository_id }}"
+          echo "It displays the owner and repository name of the action : ${{ github.action_repository }}"
+          echo "It displays the repository owner's username : owner name is ${{ github.repository_owner }}"
+          echo "It displays the repository owner's account ID : id is ${{ github.repository_owner_id }}"
+          echo "It displays the Git URL to the repository : URL is ${{ github.repository_url }}"
+          echo "It displays the number of days that workflow run logs and artifacts are kept : ${{ github.retention_days }}"
+          echo "It displays the person or app that triggered the workflow : person name is ${{ github.actor }}"
+          echo "It displays the actor id : id is ${{ github.actor_id }}"
+          echo "It displays username of the user that initiated the workflow run (may differ on re-run) : ${{ github.triggering_actor }}"
+          
+          echo "It displays the name of the event like push, pull, etc. : event name is ${{ github.event_name }}"
+          echo "It displays the commit SHA that triggered the workflow : sha id is ${{ github.sha }}"
+          echo "It displays the commit SHA for the workflow file : sha id for workflow file is ${{ github.workflow_sha }}"
+          echo "It displays the branch or tag reference : ref is ${{ github.ref }}"
+          echo "It displays the name of the workflow : workflow is ${{ github.workflow }}"
+          echo "It displays the run id : run id is ${{ github.run_id }}"
+          echo "It displays the run number : run number is ${{ github.run_number }}"
+          echo "It displays the unique number for each attempt of a workflow run : unique number is ${{ github.run_attempt }}"
+          echo "It displays the job id : job id is ${{ github.job }}"
+          echo "It displays the path where an action is located : PATH is ${{ github.action_path }}"
+          echo "It displays the current result of the action : result is ${{ github.action_status }}"
+          echo "It displays the GitHub GraphQL URL : graphql url is ${{ github.graphql_url }}"
+          echo "FirstName : ${{ env.FirstName }}"
+          echo "MiddleName : ${{ env.MiddleName }}"
+          echo "Full Name : ${{ env.FirstName }} ${{ env.MiddleName }}"
