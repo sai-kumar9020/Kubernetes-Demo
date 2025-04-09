@@ -10,7 +10,8 @@ jobs:
        uses: actions/checkout@v4.2.2
      - name: Setup Java JDK
        uses: actions/setup-java@v4
-       with:  
+       with:
+         distribution: 'oracle' 
          java-version: 17
      - name: verify the java version
        run : java -version
