@@ -1,6 +1,6 @@
 name : my first workflow
 
-on : [push , pull_request_review] 
+on : [push , pull_request_review, fork] 
 
 jobs:
   linux-os:
