@@ -2,9 +2,6 @@ name: Matrix
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
 jobs:
   matrix-echo:
     runs-on: ${{matrix.os}}
@@ -15,7 +12,7 @@ jobs:
          python-version: [3.9,3.8]
     steps:
       - name: "Matrix Usage"
-      - uses: actions/checkout@v3
+        uses: actions/checkout@v3
       - name: Set Up Python
         uses: actions/setup-python@v2
         with: 
