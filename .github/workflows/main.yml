@@ -1,0 +1,21 @@
+name: Environment Test
+ 
+on:
+  workflow_dispatch:
+    inputs:
+      TARGET_ENV:
+        description: 'Target Environment'
+        required: true
+        default: Production
+        type: environment
+ 
+jobs:
+  environment-echo:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.TARGET_ENV }}
+ 
+    steps:
+      - name: Echo Environment Variables
+        run: |
+          echo "Env var USERNAME: ${{ vars.PRODUCTION_NAME }}"
+          echo "Env secret API_KEY: ${{ secrets.PRODUCTION_KEY }}"

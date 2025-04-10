@@ -1,0 +1,30 @@
+name: Filters
+
+on: 
+  push:
+   branches:
+     - master
+   branches-ignore:
+     - dev
+     - prod
+   tags:
+    - 'v10.0'
+   tags-ignore:
+    - 'v.0.0'
+   paths:
+     - 'src/**'
+   paths-ignore:
+     - 'bin/**'
+jobs:
+  build:
+   runs-on: ubuntu-latest
+   steps: 
+     - name: Checkout
+       uses: actions/checkout@v4.2.2
+     - name: Setup Java JDK
+       uses: actions/setup-java@v4
+       with:
+         distribution: 'oracle' 
+         java-version: 17
+     - name: verify the java version
+       run : java -version
