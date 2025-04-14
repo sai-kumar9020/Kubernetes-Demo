@@ -1,0 +1,16 @@
+name: Needs Context
+
+on: 
+  workflow_dispatch
+
+jobs: 
+  job_a:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Running Job A"
+
+  job_b:
+    needs: job_a
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Running Job B after Job A"
